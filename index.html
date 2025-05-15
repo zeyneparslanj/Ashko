@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aşko Mantık Testi 💘</title>
+    <style>
+      /* GENEL */
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #fff0f5, #ffc6e7);
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+      .container {
+        background: white;
+        max-width: 600px;
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(199, 21, 133, 0.25);
+        padding: 25px 30px;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+        color: #c71585;
+        margin-bottom: 25px;
+        font-weight: 900;
+        font-size: 2rem;
+      }
+
+      /* SORULAR */
+      .question {
+        margin-bottom: 25px;
+      }
+      label.question-label {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #72004d;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      /* SEÇENEKLER */
+      .option-label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 12px 20px 12px 45px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+        background-color: #ffe4f0;
+        color: #72004d;
+        cursor: pointer;
+        font-size: 1rem;
+        box-shadow: 0 3px 6px rgba(199, 21, 133, 0.2);
+        transition: background-color 0.3s, box-shadow 0.3s;
+        user-select: none;
+        line-height: 1.4;
+        overflow-wrap: break-word;
+      }
+      .option-label:hover {
+        background-color: #ffd0e8;
+        box-shadow: 0 6px 15px rgba(199, 21, 133, 0.35);
+      }
+
+      /* RADİO BUTON */
+      .option-label input[type="radio"] {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        accent-color: #c71585;
+      }
+
+      /* BUTON */
+      .submit {
+        background-color: #c71585;
+        color: white;
+        font-weight: 700;
+        padding: 14px 25px;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 6px 15px rgba(199, 21, 133, 0.5);
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+      .submit:hover {
+        background-color: #a0136e;
+        box-shadow: 0 8px 22px rgba(199, 21, 133, 0.7);
+      }
+
+      #result {
+        margin-top: 25px;
+        font-size: 1.3rem;
+        font-weight: 900;
+        text-align: center;
+        color: #4b0082;
+        min-height: 40px;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 15px;
+        }
+        .container {
+          padding: 20px 15px;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        .option-label {
+          font-size: 0.95rem;
+          padding-left: 40px;
+        }
+        .submit {
+          font-size: 1.1rem;
+          padding: 12px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ömer'cime Aşko Mantık Testi 🧠💘</h1>
+      <form id="quizForm">
+        <div class="question">
+          <label class="question-label"
+            >1. Bir sorun çıktığında ne yaparsın?</label
+          >
+          <label class="option-label">
+            <input type="radio" name="q1" value="2" /> Kaçarım
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q1" value="4" /> Çözüm ararım
+          </label>
+        </div>
+
+        <div class="question">
+          <label class="question-label">2. Öfkeliyken ne yaparsın?</label>
+          <label class="option-label">
+            <input type="radio" name="q2" value="3" /> Susarım
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q2" value="4" /> Konuşurum ama
+            sakinleşince
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q2" value="1" /> Patlarım
+          </label>
+        </div>
+
+        <div class="question">
+          <label class="question-label"
+            >3. İlişkide en çok neye önem verirsin?</label
+          >
+          <label class="option-label">
+            <input type="radio" name="q3" value="4" /> Güven ve anlayış
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q3" value="2" /> Tutku ve heyecan
+          </label>
+        </div>
+
+        <div class="question">
+          <label class="question-label">4. Sadakat senin için nedir?</label>
+          <label class="option-label">
+            <input type="radio" name="q4" value="4" /> Temel değerdir
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q4" value="1" /> Abartılıyor bence
+          </label>
+        </div>
+
+        <div class="question">
+          <label class="question-label">5. Sorunlarda nasıl davranırsın?</label>
+          <label class="option-label">
+            <input type="radio" name="q5" value="4" /> Kalırım, çözmeye
+            çalışırım
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q5" value="2" /> Duruma göre değişir
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q5" value="1" /> Kaçarım
+          </label>
+        </div>
+
+        <div class="question">
+          <label class="question-label"
+            >6. Sana sürpriz yapmak istesem ne isterdin?</label
+          >
+          <label class="option-label">
+            <input type="radio" name="q6" value="4" /> Romantik akşam yemeği
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q6" value="3" /> Oyun veya film gecesi
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q6" value="2" /> Macera dolu bir etkinlik
+          </label>
+        </div>
+
+        <div class="question">
+          <label class="question-label"
+            >7. Benimle tartıştığında nasıl davranırsın?</label
+          >
+          <label class="option-label">
+            <input type="radio" name="q7" value="4" /> Anlayışlı olurum
+          </label>
+
+          <label class="option-label">
+            <input type="radio" name="q7" value="2" /> Tartışmayı büyütürüm
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q7" value="1" /> Kaçarım
+          </label>
+        </div>
+
+        <div class="question">
+          <label class="question-label"
+            >8. Anlaşmazlıkta önceliğin nedir?</label
+          >
+          <label class="option-label">
+            <input type="radio" name="q8" value="4" /> Konuşup çözmek
+          </label>
+
+          <label class="option-label">
+            <input type="radio" name="q8" value="2" /> Biraz zaman vermek
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q8" value="1" /> Görmezden gelmek
+          </label>
+        </div>
+
+        <div class="question">
+          <label class="question-label"
+            >9. Geleceğe dair en büyük hayalin?</label
+          >
+          <label class="option-label">
+            <input type="radio" name="q9" value="4" /> Sağlıklı, mutlu bir aile
+          </label>
+
+          <label class="option-label">
+            <input type="radio" name="q9" value="2" /> Dünya turu yapmak
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q9" value="1" /> Yüksek kariyer ve başarı
+          </label>
+        </div>
+
+        <button type="button" class="submit" onclick="calculateScore()">
+          Gönder ve Sonucu Gör 📝
+        </button>
+
+        <button
+          id="copyButton"
+          style="display: none; margin-top: 10px"
+          onclick="copyAnswers()"
+        >
+          Cevapları Kopyala 📋
+        </button>
+
+        <button
+          id="copyButton"
+          onclick="copyToClipboard()"
+          style="display: none"
+        >
+          📋 Sonucu Kopyala
+        </button>
+        <button
+          id="whatsappButton"
+          onclick="shareOnWhatsApp()"
+          style="display: none"
+        >
+          💬 WhatsApp'ta Paylaş
+        </button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function calculateScore() {
+        let form = document.forms["quizForm"];
+        let score = 0;
+        let selectedAnswers = [];
+
+        for (let i = 1; i <= 7; i++) {
+          const q = form["q" + i];
+          let answered = false;
+          for (let option of q) {
+            if (option.checked) {
+              score += parseInt(option.value);
+              selectedAnswers.push(
+                `Soru ${i}: ${option.parentElement.innerText.trim()}`
+              );
+              answered = true;
+            }
+          }
+          if (!answered) {
+            document.getElementById("result").textContent =
+              "Tüm soruları cevapla aşko! 💌";
+            document.getElementById("copyButton").style.display = "none";
+            return;
+          }
+        }
+
+        let resultText = "";
+        if (score >= 25) {
+          resultText = "🔥 Seninle evlenilir, hem de hemen! #MantıkKuşko";
+        } else if (score >= 18) {
+          resultText = "💖 Sağlam aday, biraz daha çaba ile full puan!";
+        } else if (score >= 12) {
+          resultText = "🤨 Potansiyel var ama dikkatli gözlemem mi gerekiyor?";
+        } else {
+          resultText = "🚨 Alarm zilleri çalıyorrr, kaçıyorum bayb bys.";
+        }
+
+        document.getElementById("result").innerHTML = `
+    <p><strong>Sonuç:</strong> ${resultText}</p>
+    <hr />
+    <p><strong>Seçimlerin:</strong><br>${selectedAnswers.join("<br>")}</p>
+  `;
+        document.getElementById("copyButton").style.display = "block";
+      }
+
+     
+      function copyAnswers() {
+        const result = document.getElementById("result").innerText;
+        navigator.clipboard.writeText(result).then(() => {
+          alert(
+            "Cevaplar panoya kopyalandı aşkım! 🎉 Şimdi yapıştırıp bana gönder 😘"
+          );
+        });
+      }
+
+      // bok ettim hshshsh
+
+      // function calculateScore() {
+      //   const correctAnswers = ["c", "a", "b", "b", "a"];
+      //   let score = 0;
+      //   const result = document.getElementById("result");
+      //   let message = "";
+
+      // //   for (let i = 0; i < correctAnswers.length; i++) {
+      // //     const question = document.querySelector(`input[name="q${i + 1}"]:checked`);
+      // //     if (question && question.value === correctAnswers[i]) {
+      // //       score++;
+      // //       message += `✅ Soru ${i + 1}: Doğru\n`;
+      // //     } else {
+      // //       message += `❌ Soru ${i + 1}: Yanlış\n`;
+      // //     }
+      // //   }
+
+      // //   message += `\n🎯 Toplam Puanın: ${score} / ${correctAnswers.length}`;
+      // //   result.innerText = message;
+
+      //   document.getElementById("copyButton").style.display = "block";
+      //   document.getElementById("whatsappButton").style.display = "block";
+      // }
+
+      // function copyToClipboard() {
+      //   const result = document.getElementById("result").innerText;
+      //   navigator.clipboard.writeText(result).then(() => {
+      //     alert("Sonuç panoya kopyalandı!");
+      //   });
+      // }
+
+      // function shareOnWhatsApp() {
+      //   const result = document.getElementById("result").innerText;
+      //   const url = `https://wa.me/?text=${encodeURIComponent(result)}`;
+      //   window.open(url, '_blank');
+      // }
+
+      //     function calculateScore() {
+      //   let form = document.forms["quizForm"];
+      //   let score = 0;
+      //   let selectedAnswers = [];
+
+      //   for (let i = 1; i <= 7; i++) {
+      //     const q = form["q" + i];
+      //     let answered = false;
+      //     for (let option of q) {
+      //       if (option.checked) {
+      //         score += parseInt(option.value);
+      //         selectedAnswers.push(`Soru ${i}: ${option.parentElement.innerText.trim()}`);
+      //         answered = true;
+      //       }
+      //     }
+      //     if (!answered) {
+      //       document.getElementById("result").textContent = "Tüm soruları cevapla aşko! 💌";
+      //       document.getElementById("copyButton").style.display = "none";
+      //       return;
+      //     }
+      //   }
+
+      //   let resultText = "";
+      //   if (score >= 25) {
+      //     resultText = "🔥 Seninle evlenilir, hem de hemen! #MantıkKuşko";
+      //   } else if (score >= 18) {
+      //     resultText = "💖 Sağlam aday, biraz daha çaba ile full puan!";
+      //   } else if (score >= 12) {
+      //     resultText = "🤨 Potansiyel var ama dikkatli gözlem şart.";
+      //   } else {
+      //     resultText = "🚨 Alarm zilleri çalıyor aşkım, bunu iyi düşün.";
+      //   }
+
+      // //   document.getElementById("result").innerHTML = `
+      // //     <p><strong>Sonuç:</strong> ${resultText}</p>
+      // //     <hr />
+      // //     <p><strong>Seçimlerin:</strong><br>${selectedAnswers.join("<br>")}</p>
+      // //   `;
+      // //   document.getElementById("copyButton").style.display = "block";
+      // // }
+
+      // // function copyAnswers() {
+      // //   const result = document.getElementById("result").innerText;
+      // //   navigator.clipboard.writeText(result).then(() => {
+      // //     alert("Cevaplar panoya kopyalandı aşkım! 🎉 Şimdi yapıştırıp bana gönder 😘");
+      // //   });
+      // // }
+
+      // //     function calculateScore() {
+      // //       const form = document.getElementById("quizForm");
+      // //       let score = 0;
+
+      // //       // Sorular 1-7 arasında döngü
+      // //       for (let i = 1; i <= 7; i++) {
+      // //         const q = form["q" + i];
+      // //         let answered = false;
+      // //         for (let option of q) {
+      // //           if (option.checked) {
+      // //             score += parseInt(option.value);
+      // //             answered = true;
+      // //           }
+      // //         }
+      // //         if (!answered) {
+      // //           document.getElementById("result").textContent = "Tüm soruları cevapla aşko! 💌";
+      // //           return;
+      // //         }
+      // //       }
+
+      // //       let resultText = "";
+      // //       if (score >= 25) {
+      // //         resultText = "🔥 Seninle evlenilir, hem de hemen! #MantıkKuşko";
+      // //       } else if (score >= 18) {
+      // //         resultText = "💖 Sağlam aday, biraz daha çaba ile full puan!";
+      // //       } else if (score >= 12) {
+      // //         resultText = "🤨 Potansiyel var ama dikkatli gözlemek şartıyla.";
+      // //       } else {
+      // //         resultText = "🚨 Alarm zilleri çalıyor, kaçıyorummm.";
+      // //       }
+
+      // //       document.getElementById("result").textContent = resultText;
+      // //     }
+    </script>
+  </body>
+</html>
